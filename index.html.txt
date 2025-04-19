@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sürpriz</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #ffe6e6;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+    h1 {
+      font-size: 48px;
+      color: #cc0000;
+    }
+    button {
+      font-size: 24px;
+      padding: 10px 30px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .evet {
+      background-color: #ff4d4d;
+      color: white;
+    }
+    .hayir {
+      background-color: #999999;
+      color: white;
+    }
+    #kalp {
+      font-size: 100px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Beni seviyor musun?</h1>
+  <button class="evet" onclick="cevap(true)">Evet</button>
+  <button class="hayir" onclick="cevap(false)">Hayır</button>
+
+  <div id="sonuc" style="margin-top: 50px;"></div>
+  <div id="kalp"></div>
+
+  <script>
+    function cevap(seviyor) {
+      let sonuc = document.getElementById("sonuc");
+      let kalp = document.getElementById("kalp");
+      if (seviyor) {
+        sonuc.innerHTML = "<h1>Ben de seni seviyorum!</h1>";
+        kalp.style.display = "block";
+        kalp.innerHTML = "❤️";
+      } else {
+        sonuc.innerHTML = "<h1>Öyle olsun...</h1>";
+        kalp.style.display = "block";
+        kalp.innerHTML = "💔";
+      }
+    }
+  </script>
+
+</body>
+</html>
